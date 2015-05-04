@@ -44,9 +44,20 @@ button.addEventListener('click', function() {
     var player = document.getElementById('sound');
 
     /**
-     * The player variable now contains our <audio/> HTML element
-     * This element is again a special type of HTML element that can play
-     * sounds. To do that, we need to order him to do so.
+     * Users have found a strange bug!
+     *
+     * If you click on the element while it is still playing, nothing happens.
+     * Our users have been told the playback would stop if the sound is still playing.
+     *
+     * To fix this, we need to know if our player is playing or is idle.
+     * Our player HTML element has a Boolean property called paused that tells us
+     * if the player is or is not playing a sound at the moment.
      */
-    player.play();
+    if (player.paused) {
+        // player.paused is truthy, that means the player is not playing anything
+        player.play();
+    } else {
+        // player.paused is falsy, that means the player is playing something
+        player.pause();
+    }
 });
