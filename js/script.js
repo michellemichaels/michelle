@@ -54,7 +54,15 @@ button.addEventListener('click', function() {
      * if the player is or is not playing a sound at the moment.
      */
     if (player.paused) {
-        // player.paused is truthy, that means the player is not playing anything
+        /**
+         * Yet another bug!
+         *
+         * Playback now starts and stops as expected, but it does not start from the beginning!
+         * Users need the sound to start from 0:00.
+         *
+         * To fix this, we need to tell our player to rewind the sound to its beginning.
+         */
+        player.currentTime = 0;
         player.play();
     } else {
         // player.paused is falsy, that means the player is playing something
