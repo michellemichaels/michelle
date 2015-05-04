@@ -36,4 +36,17 @@ var button = document.getElementById('button');
  */
 button.addEventListener('click', function() {
     console.log('button was clicked');
+
+    /**
+     * We now need to perform our action, that is we need to play the sound.
+     * To do that, we have to find our <audio/> HTML element (guess how!)
+     */
+    var player = document.getElementById('sound');
+
+    /**
+     * The player variable now contains our <audio/> HTML element
+     * This element is again a special type of HTML element that can play
+     * sounds. To do that, we need to order him to do so.
+     */
+    player.play();
 });
