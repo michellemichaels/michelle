@@ -1,0 +1,50 @@
+/*
+ * We have to make the button look good.
+ * Sleek look is 50% of this app's success.
+ *
+ * In order to do this, we have to use CSS.
+ * And since we're super cool HTML coders now, "inline" styles
+ * don't cut it anymore.
+ *
+ * When using separate .css files, you need to specify
+ * target element by using so called selector.
+ *
+ * Selectors can be HTML tag names (select, button, div...),
+ * HTML id attributes prefixed with # (i.e. if you have a div element
+ * <div id="my-div">...</div> then its selector is #my-div),
+ * HTML class attributes prefixed with . (i.e. if you have a span element
+ * <span class="my-span">...</span>) then its selector is .my-span).
+ *
+ * The next lines use button selector that will apply the following style block
+ * to all buttons on the page.
+ */
+button {
+    background: #0DD;
+    border: none;
+    color: white;
+
+    /* This will turn the normal arrow cursor into click cursor */
+    cursor: pointer;
+}
+
+/*
+ * HTML elements, especially buttons and input elements can have
+ * multiple states - button can be just hanging around, user might have just clicked on it,
+ * user might have clicked on it and did not release the mouse button yet and so on.
+ *
+ * In CSS we can change styles for such states by using so called pseudo selectors.
+ * To use a pseudo selector, you append its name to an existing selector, e.g.
+ */
+button:active {
+    background: #0BB;
+}
+
+/*
+ * The block above will be applied to active buttons
+ * (i.e. buttons that were clicked and mouse button was not released yet).
+ * Following styles will only b applied to elements
+ * that the cursor is currently hovering over
+ */
+button:hover {
+    background: #0AA;
+}
